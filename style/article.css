@@ -1,6 +1,6 @@
 article {
     border-radius: 20px;
-    box-shadow: 5px 5px 10px rgb(93, 78, 58), -5px -5px 10px rgb(255, 234, 197);
+    box-shadow: 5px 5px 10px rgb(72, 59, 42), -5px -5px 10px rgb(255, 234, 197);
     padding: 30px;
     display: flex;
     flex-direction: column;
@@ -9,4 +9,29 @@ article {
 
 input {
     border-radius: 5px;
+    border: none;
+    background-color: rgb(222, 196, 162);
+    box-shadow: inset 2px 2px 5px rgb(72, 59, 42), inset -2px -2px 5px rgb(255, 234, 197);
+    padding: 5px;
+}
+
+.btn-con {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+button {
+    width: 150px;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(184, 162, 133);
+    box-shadow: 5px 5px 10px rgb(72, 59, 42), -5px -5px 10px rgb(255, 234, 197);
+    cursor: pointer;
+}
+
+button:hover {
+    box-shadow: inset 3px 3px 8px rgb(72, 59, 42), inset -3px -3px 8px rgb(255, 234, 197);
 }
