@@ -5,11 +5,11 @@ class Bank {
     this.button = document.querySelector(".btn");
 
     if (this.button) {
-      this.button.addEventListener("click", () => this.calculate());
+      this.button.addEventListener("click", () => this.credit());
     }
   }
 
-  calculate() {
+  credit() {
     const sum = Number(
       document.querySelector<HTMLInputElement>("#summ")?.value
     );
@@ -17,14 +17,17 @@ class Bank {
       document.querySelector<HTMLInputElement>("#term")?.value
     );
     const res = document.querySelector<HTMLParagraphElement>(".result");
+    const tot = document.querySelector<HTMLParagraphElement>(".total");
     let percent =
       Number(document.querySelector<HTMLInputElement>("#percent")?.value) /
       (12 * 100);
 
     const payment =
       sum * ((percent * (1 + percent) ** term) / ((1 + percent) ** term - 1));
+    const total = payment * term;
 
-    res!.textContent = payment.toFixed(3);
+    res!.textContent = "Ежемесячная плата: " + payment.toFixed(2);
+    tot!.textContent = "Общая сумма выплаты: " + total.toFixed(2);
     return payment;
   }
 }

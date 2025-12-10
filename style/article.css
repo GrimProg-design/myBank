@@ -1,0 +1,12 @@
+article {
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px rgb(93, 78, 58), -5px -5px 10px rgb(255, 234, 197);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input {
+    border-radius: 5px;
+}
