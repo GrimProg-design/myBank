@@ -1,0 +1,21 @@
+{
+  "name": "mybank",
+  "version": "1.0.0",
+  "description": "Этот сайт нужен для расчета кредита для моего банка",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GrimProg-design/myBank.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/GrimProg-design/myBank/issues"
+  },
+  "homepage": "https://github.com/GrimProg-design/myBank#readme"
+}

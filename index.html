@@ -9,17 +9,19 @@
     <article>
       <div>
         <label for="summ">Сумма кредита</label>
-        <input id="summ" type="text" />
+        <input id="summ" type="number" />
       </div>
       <div>
         <label for="term">Срок кредита</label>
-        <input id=term" type="text">
+        <input id="term" type="number">
       </div>
       <div>
         <label for="percent">Проценты</label>
-        <input id="percent" type="text">
+        <input id="percent" type="number">
       </div>
-      <button>Посчитать</button>
+      <button class="btn">Посчитать</button>
+      <p class="result"></p>
     </article>
+    <script type="module" src="dist/app.js"></script>
   </body>
 </html>
