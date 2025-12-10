@@ -1,6 +1,9 @@
+import { Defender } from "./defender.js";
 class Bank {
+    defender;
     button;
-    constructor() {
+    constructor(defender = new Defender()) {
+        this.defender = defender;
         this.button = document.querySelector(".btn");
         if (this.button) {
             this.button.addEventListener("click", () => this.credit());
@@ -15,11 +18,14 @@ class Bank {
             (12 * 100);
         const payment = sum * ((percent * (1 + percent) ** term) / ((1 + percent) ** term - 1));
         const total = payment * term;
+        if (!this.defender.isValid(sum, term, percent)) {
+            alert("Ваши данные имею отрицательные значения");
+            window.location.reload();
+        }
         res.textContent = "Ежемесячная плата: " + payment.toFixed(2);
         tot.textContent = "Общая сумма выплаты: " + total.toFixed(2);
         return payment;
     }
 }
 new Bank();
-export {};
 //# sourceMappingURL=app.js.map

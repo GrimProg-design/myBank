@@ -1,7 +1,9 @@
+import { Defender } from "./defender";
+
 class Bank {
   button: HTMLButtonElement | null;
 
-  constructor() {
+  constructor(public defender = new Defender()) {
     this.button = document.querySelector(".btn");
 
     if (this.button) {
@@ -26,6 +28,10 @@ class Bank {
       sum * ((percent * (1 + percent) ** term) / ((1 + percent) ** term - 1));
     const total = payment * term;
 
+    if(!this.defender.isValid(sum, term, percent)) {
+        alert("Ваши данные имею отрицательные значения")
+        window.location.reload()
+    }
     res!.textContent = "Ежемесячная плата: " + payment.toFixed(2);
     tot!.textContent = "Общая сумма выплаты: " + total.toFixed(2);
     return payment;
