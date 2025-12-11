@@ -9,5 +9,13 @@ export class Defender {
         console.log("Значения верные");
         return true;
     }
+    pipe(...args) {
+        let arr = [];
+        for (let n of args) {
+            n = Math.abs(n);
+            arr.push(n);
+        }
+        return arr;
+    }
 }
 //# sourceMappingURL=defender.js.map

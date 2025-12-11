@@ -11,6 +11,12 @@ class Bank {
     }
   }
 
+  private pipe(sum: number, term: number, percent: number) {
+    const changedData = this.defender.pipe(sum, term, percent);
+    const [sum2, term2, percent2] = changedData;
+    return [sum2, term2, percent2];
+  }
+
   credit() {
     const sum = Number(
       document.querySelector<HTMLInputElement>("#summ")?.value
@@ -24,14 +30,12 @@ class Bank {
       Number(document.querySelector<HTMLInputElement>("#percent")?.value) /
       (12 * 100);
 
+    const pip = this.pipe(sum, term, percent);
+    console.log(pip)
     const payment =
       sum * ((percent * (1 + percent) ** term) / ((1 + percent) ** term - 1));
     const total = payment * term;
 
-    if(!this.defender.isValid(sum, term, percent)) {
-        alert("Ваши данные имею отрицательные значения")
-        window.location.reload()
-    }
     res!.textContent = "Ежемесячная плата: " + payment.toFixed(2);
     tot!.textContent = "Общая сумма выплаты: " + total.toFixed(2);
     return payment;

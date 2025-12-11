@@ -1,4 +1,4 @@
-import { Defender } from "./defender.js";
+import { Defender } from "./defender";
 class Bank {
     defender;
     button;
@@ -9,6 +9,11 @@ class Bank {
             this.button.addEventListener("click", () => this.credit());
         }
     }
+    pipe(sum, term, percent) {
+        const changedData = this.defender.pipe(sum, term, percent);
+        const [sum2, term2, percent2] = changedData;
+        return [sum2, term2, percent2];
+    }
     credit() {
         const sum = Number(document.querySelector("#summ")?.value);
         const term = Number(document.querySelector("#term")?.value);
@@ -16,12 +21,10 @@ class Bank {
         const tot = document.querySelector(".total");
         let percent = Number(document.querySelector("#percent")?.value) /
             (12 * 100);
+        const pip = this.pipe(sum, term, percent);
+        console.log(pip);
         const payment = sum * ((percent * (1 + percent) ** term) / ((1 + percent) ** term - 1));
         const total = payment * term;
-        if (!this.defender.isValid(sum, term, percent)) {
-            alert("Ваши данные имею отрицательные значения");
-            window.location.reload();
-        }
         res.textContent = "Ежемесячная плата: " + payment.toFixed(2);
         tot.textContent = "Общая сумма выплаты: " + total.toFixed(2);
         return payment;

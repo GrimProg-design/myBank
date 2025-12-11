@@ -1,1 +1,1 @@
-{"version":3,"file":"defender.d.ts","sourceRoot":"","sources":["../src/defender.ts"],"names":[],"mappings":"AAAA,qBAAa,QAAQ;IACjB,OAAO,CAAC,GAAG,IAAI,EAAE,MAAM,EAAE,GAAG,OAAO;CAUtC"}
+{"version":3,"file":"defender.d.ts","sourceRoot":"","sources":["../src/defender.ts"],"names":[],"mappings":"AAAA,qBAAa,QAAQ;IACnB,OAAO,CAAC,GAAG,IAAI,EAAE,MAAM,EAAE,GAAG,OAAO;IAWnC,IAAI,CAAC,GAAG,IAAI,EAAE,MAAM,EAAE,GAAG,MAAM,EAAE;CAQlC"}
