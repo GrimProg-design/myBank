@@ -1,4 +1,4 @@
-import { Defender } from "./defender";
+import { Defender } from "./defender.js";
 class Bank {
     defender;
     button;
